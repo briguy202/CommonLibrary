@@ -1,0 +1,4 @@
+.cbtn{display:-moz-inline-box;display:inline-block;vertical-align:text-bottom;border-width:1px 0;border-style:solid;border-color:#808080;background:url(<%=WebResource("CommonLibrary.Web.UI.Controls.Images.sprite.jpg:CommonLibrary.Web.UI.Page")%>) repeat-x 0 0;}
+.cbtn .first-child{display:block;*display:inline-block;border-width:0 1px;border-style:solid;border-color:#808080;margin:0 -1px;*position:relative;*left:-1px;_margin:0;_position:static;}
+.cbtn input{display:block;*display:inline-block;border:none;margin:0;background-color:transparent;*overflow:visible;cursor:pointer;padding:0 10px;font-size:93%;line-height:2;*line-height:1.7;min-height:2em;*min-height:auto;color:#FFF;font-weight: bold;}
+.cbtn:hover { background-position: 0 -31px; }

@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F426BC5F-70A1-4228-81E0-3852D2E001B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonLibrary.Web.UI</RootNamespace>
+    <AssemblyName>CommonLibrary.Web.UI</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxPro.2">
+      <HintPath>..\..\..\References\AjaxPro.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\..\References\Microsoft Enterprise Library 5.0\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\..\..\References\Microsoft Enterprise Library 5.0\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context.cs" />
+    <Compile Include="Controls\Button.cs" />
+    <Compile Include="Controls\TextBox.cs" />
+    <Compile Include="Controls\HiddenField.cs" />
+    <Compile Include="ResourceBundler\Bundler.cs" />
+    <Compile Include="ContentControl.cs" />
+    <Compile Include="Page.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageTraceLine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceBundler\BundlerHandler.cs" />
+    <Compile Include="ResourceBundler\ResourceBundle.cs" />
+    <Compile Include="Validators\CommonValidatorBase.cs" />
+    <Compile Include="Validators\RequiredFieldValidator.cs" />
+    <Compile Include="WebTraceListener.cs" />
+    <Compile Include="YUI\DataTable.cs" />
+    <Compile Include="YUI\DataTableColumn.cs" />
+    <Compile Include="YUI\Popup.cs" />
+    <Compile Include="YUI\YUIHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary.Business\CommonLibrary.Business.csproj">
+      <Project>{977E021C-FF1B-45CC-A167-BFA6EEA3B592}</Project>
+      <Name>CommonLibrary.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLibrary.Framework\CommonLibrary.Framework.csproj">
+      <Project>{4CDCB2F8-8934-4F4F-83A4-61E0B2C14E99}</Project>
+      <Name>CommonLibrary.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\YUIElements\animation-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\button-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\container_core-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\editor-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\element-beta-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\menu-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\yahoo-dom-event.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ClientScripts\editor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\YUIElements\dragdrop-min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\YUIElements\animation.js" />
+    <EmbeddedResource Include="YUI\YUIElements\button.js" />
+    <EmbeddedResource Include="YUI\YUIElements\container_core.js" />
+    <EmbeddedResource Include="YUI\YUIElements\dragdrop.js" />
+    <EmbeddedResource Include="YUI\YUIElements\editor.js" />
+    <EmbeddedResource Include="YUI\YUIElements\element-beta.js" />
+    <EmbeddedResource Include="YUI\YUIElements\menu.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\YUIElements\container-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\container.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Validators\ClientScripts\RequiredFieldValidator.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Validators\ClientScripts\CommonValidatorBase.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\YUIElements\datasource-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\datasource.js" />
+    <EmbeddedResource Include="YUI\YUIElements\datatable-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\datatable.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\YUIElements\calendar-min.js" />
+    <EmbeddedResource Include="YUI\YUIElements\calendar.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\Templates\DataTable.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\CSS\button.css" />
+    <EmbeddedResource Include="YUI\Images\menu-button-arrow-disabled.png" />
+    <EmbeddedResource Include="YUI\Images\menu-button-arrow.png" />
+    <EmbeddedResource Include="YUI\Images\split-button-arrow-active.png" />
+    <EmbeddedResource Include="YUI\Images\split-button-arrow-disabled.png" />
+    <EmbeddedResource Include="YUI\Images\split-button-arrow-focus.png" />
+    <EmbeddedResource Include="YUI\Images\split-button-arrow-hover.png" />
+    <EmbeddedResource Include="YUI\Images\split-button-arrow.png" />
+    <EmbeddedResource Include="YUI\Images\sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\CSS\menu.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YUI\Images\menubaritem_submenuindicator.png" />
+    <EmbeddedResource Include="YUI\Images\menubaritem_submenuindicator_disabled.png" />
+    <EmbeddedResource Include="YUI\Images\menuitem_checkbox.png" />
+    <EmbeddedResource Include="YUI\Images\menuitem_checkbox_disabled.png" />
+    <EmbeddedResource Include="YUI\Images\menuitem_submenuindicator.png" />
+    <EmbeddedResource Include="YUI\Images\menuitem_submenuindicator_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\CSS\button.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Images\sprite.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="YUI\ClientScripts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
